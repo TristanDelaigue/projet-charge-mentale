@@ -1,10 +1,5 @@
 import torch
 import torch.nn as nn
-import torch.optim as optim
-
-
-import torch
-import torch.nn as nn
 
 class FCNBranch(nn.Module):
     def __init__(self, kernel_size):

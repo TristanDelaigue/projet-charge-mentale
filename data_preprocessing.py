@@ -33,7 +33,7 @@ x_gsr_res = [resample(x, resample_size) for x in x_gsr]
 x_inf_ppg_res = [resample(x, resample_size) for x in x_inf_ppg]
 #x_pix_ppg_res = resample(x_pix_ppg, resample_size) TODO make this work (not all things of the same size)
 
-x_ecg_train, x_ecg_test, x_gsr_train, x_gsr_test, x_inf_ppg_train, x_inf_ppg_test, y_train, y_test = train_test_split(
+x_ecg_res_train, x_ecg_res_test, x_gsr_res_train, x_gsr_res_test, x_inf_ppg_res_train, x_inf_ppg_res_test, y_train, y_test = train_test_split(
     x_ecg_res,
     x_gsr_res,
     x_inf_ppg_res,
@@ -41,12 +41,12 @@ x_ecg_train, x_ecg_test, x_gsr_train, x_gsr_test, x_inf_ppg_train, x_inf_ppg_tes
     train_size=0.8
 )
 
-x_ecg_train_loader = torch.utils.data.DataLoader(x_ecg_train, shuffle=True, batch_size=12)
-x_ecg_test_loader = torch.utils.data.DataLoader(x_ecg_test, shuffle=True, batch_size=12)
-x_gsr_train_loader = torch.utils.data.DataLoader(x_gsr_train, shuffle=True, batch_size=12)
-x_gsr_test_loader = torch.utils.data.DataLoader(x_gsr_test, shuffle=True, batch_size=12)
-x_inf_ppg_train_loader = torch.utils.data.DataLoader(x_inf_ppg_train, shuffle=True, batch_size=12)
-x_inf_ppg_test_loader = torch.utils.data.DataLoader(x_inf_ppg_test, shuffle=True, batch_size=12)
+x_ecg_res_train_loader = torch.utils.data.DataLoader(x_ecg_res_train, shuffle=True, batch_size=12)
+x_ecg_res_test_loader = torch.utils.data.DataLoader(x_ecg_res_test, shuffle=True, batch_size=12)
+x_gsr_res_train_loader = torch.utils.data.DataLoader(x_gsr_res_train, shuffle=True, batch_size=12)
+x_gsr_res_test_loader = torch.utils.data.DataLoader(x_gsr_res_test, shuffle=True, batch_size=12)
+x_inf_res_ppg_train_loader = torch.utils.data.DataLoader(x_inf_ppg_res_train, shuffle=True, batch_size=12)
+x_inf_res_ppg_test_loader = torch.utils.data.DataLoader(x_inf_ppg_res_test, shuffle=True, batch_size=12)
 y_train_loader = torch.utils.data.DataLoader(y_train, shuffle=True, batch_size=12)
 y_test_loader = torch.utils.data.DataLoader(y_test, shuffle=True, batch_size=12)
 
